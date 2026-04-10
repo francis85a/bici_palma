@@ -1,4 +1,5 @@
 package edu.teamrocket.bici_palma.domain.estacion;
+import edu.teamrocket.bici_palma.domain.bicicleta.Movil;
 
 public class Estacion {
     private final int id;
@@ -23,7 +24,9 @@ public class Estacion {
     public String toString() {
         return "id: " + getId() + '\n' +
                 "direccion: " + getDireccion() + '\n' +
-                "numAnclajes: " + numAnclajes() + '\n';
+                "numeroAnclajes: " + numAnclajes();
 
     }
+    
+    
 }
