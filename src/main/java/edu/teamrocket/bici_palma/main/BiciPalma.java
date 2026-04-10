@@ -1,8 +1,8 @@
 package edu.teamrocket.bici_palma.main;
 
-import bicicleta.Bicicleta;
-import estacion.Estacion;
-import tarjetaUsuario.TarjetaUsuario;
+import edu.teamrocket.bici_palma.domain.bicicleta.Bicicleta;
+import edu.teamrocket.bici_palma.domain.estacion.Estacion;
+import edu.teamrocket.bici_palma.domain.TarjetaUsuario;
 
 public class BiciPalma {
 
