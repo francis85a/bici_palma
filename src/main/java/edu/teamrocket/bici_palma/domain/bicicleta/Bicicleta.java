@@ -1,7 +1,5 @@
 package edu.teamrocket.bici_palma.domain.bicicleta;
 
-import javax.management.monitor.StringMonitor;
-
 public class Bicicleta implements Movil {
     private final int id;
 

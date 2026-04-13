@@ -50,4 +50,12 @@ class Anclajes {
         }
         return -1;
     }
+
+    public String toString(){
+        StringBuilder cantidad_anclajes = new StringBuilder();
+        for (int i = 0; i < numAnclajes(); i++) {
+            cantidad_anclajes.append("Anclaje ").append(i).append(": ").append(anclajes[i].toString()).append('\n');
+        }
+        return cantidad_anclajes.toString();
+    }
 }
