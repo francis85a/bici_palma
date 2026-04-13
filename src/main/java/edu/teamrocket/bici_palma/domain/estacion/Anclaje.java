@@ -10,21 +10,21 @@ public class Anclaje {
         this.bici = null;
     }
 
-    boolean isOcupado() {
+    public boolean isOcupado() {
         return ocupado;
     }
 
-    Movil getBici() {
+    public Movil getBici() {
         return bici;
     }
 
-    void anclarBici(Movil bici)
+    public void anclarBici(Movil bici)
     {
         this.bici = bici;
         this.ocupado = true;
     }
 
-    void liberarBici()
+    public void liberarBici()
     {
         this.bici = null;
         this.ocupado = false;
