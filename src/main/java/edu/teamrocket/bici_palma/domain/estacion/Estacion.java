@@ -1,5 +1,8 @@
 package edu.teamrocket.bici_palma.domain.estacion;
+
 import edu.teamrocket.bici_palma.domain.bicicleta.Movil;
+import edu.teamrocket.bici_palma.domain.tarjetaUsuario.Autenticacion;
+
 import java.util.Optional;
 
 public class Estacion {
@@ -28,13 +31,13 @@ public class Estacion {
                 "numeroAnclajes: " + numAnclajes();
 
     }
-    
+
     private Anclaje[] anclajes() {
-        return anclajes.anclajes();
+        return this.anclajes.anclajes();
     }
 
     private int numAnclajes() {
-        return anclajes.numAnclajes();
+        return this.anclajes.numAnclajes();
     }
 
     public void consultarEstacion() {
@@ -43,22 +46,53 @@ public class Estacion {
 
     public int anclajesLibres() {
         int anclajes_libres = 0;
-        for (int i = 0; i < numAnclajes(); i++) {
-            if (!anclajes.isAnclajeOcupado(i)) {
+        for (Anclaje anclaje : anclajes()) {
+            if (!anclaje.isOcupado()) {
                 anclajes_libres++;
             }
         }
         return anclajes_libres;
     }
-    
-    public void anclarBici(Movil bici){
-        Optional<Anclaje> anclajesLibres = Optional.empty();
-        if (anclajesLibres.isPresent()) {
-            anclajesLibres.get().anclarBici(bici);
-            
-            
+
+    public void anclarBicicleta(Movil bici) {
+        if (anclajesLibres() > 0) {
+            int posicion = this.anclajes.seleccionarAnclaje();
+            this.anclajes()[posicion].anclarBici(bici);
         } else {
             System.out.println("No hay anclajes libres");
+        }
+    }
+
+    public boolean leerTarjetaUsuario(Autenticacion TarjetaUsuario) {
+        return TarjetaUsuario.isActivada();
+
+    }
+
+    private void mostrarBicicleta(Movil bicicleta, int numAnclaje) {
+        System.out.println("Bicicleta en el anclaje " + numAnclaje + ": " + bicicleta.toString());
+    }
+
+
+    public void retirarBicicleta(Autenticacion TarjetaUsuario) {
+        if (leerTarjetaUsuario(TarjetaUsuario)) {
+            int numAnclaje = 1;
+            for (Anclaje anclaje : anclajes()) {
+                if (anclaje.isOcupado()) {
+                    Movil bici = anclaje.getBici();
+                    mostrarBicicleta(bici, numAnclaje);
+                    anclaje.liberarBici();
+                    return;
+                }
+                numAnclaje++;
+            }
+        } else {
+            System.out.println("Tarjeta de usuario no válida");
+        }
+    }
+
+    public void consultarAnclajes() {
+        for (Anclaje anclaje : anclajes()) {
+            System.out.println(anclaje.toString());
         }
     }
 }

@@ -1,6 +1,6 @@
 package edu.teamrocket.bici_palma.domain.tarjetaUsuario;
 
-public class TarjetaUsuario implements Autentificacion {
+public class TarjetaUsuario implements Autenticacion {
 
     private final String id;
     private boolean activada = false;

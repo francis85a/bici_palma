@@ -1,6 +1,6 @@
 package edu.teamrocket.bici_palma.domain.tarjetaUsuario;
 
-public interface Autentificacion {
+public interface Autenticacion {
 
     boolean isActivada();
     

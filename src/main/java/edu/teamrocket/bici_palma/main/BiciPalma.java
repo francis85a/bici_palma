@@ -2,8 +2,7 @@ package edu.teamrocket.bici_palma.main;
 
 import edu.teamrocket.bici_palma.domain.bicicleta.Bicicleta;
 import edu.teamrocket.bici_palma.domain.estacion.Estacion;
-import edu.teamrocket.bici_palma.domain.TarjetaUsuario;
-
+import edu.teamrocket.bici_palma.domain.tarjetaUsuario.TarjetaUsuario;
 public class BiciPalma {
 
 	public static void main(String[] args) {
