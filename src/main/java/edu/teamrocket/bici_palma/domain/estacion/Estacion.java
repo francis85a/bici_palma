@@ -3,7 +3,6 @@ package edu.teamrocket.bici_palma.domain.estacion;
 import edu.teamrocket.bici_palma.domain.bicicleta.Movil;
 import edu.teamrocket.bici_palma.domain.tarjetaUsuario.Autenticacion;
 
-import java.util.Optional;
 
 public class Estacion {
     private final int id;

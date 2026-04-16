@@ -1,7 +1,6 @@
 package edu.teamrocket.bici_palma.estacion;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import edu.teamrocket.bici_palma.domain.estacion.Anclaje;
